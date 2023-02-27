@@ -4,7 +4,6 @@ var pilha = [], sinal = [], ultimosValores = [], memoria = [], historico = [];
 var limparDisplay = true;
 var ultimoSinal;
 
-
 //displays
 let display = document.querySelector(".display");
 let subDisplay = document.querySelector(".sub-display");
@@ -82,7 +81,6 @@ function calcular() {
                 window.alert("Ainda não implementado");
                 break;
         }
-
 
 
         ultimoSinal = sinal[0];
@@ -175,6 +173,7 @@ function apagarCaracter() {
         display.value = 0;
     }
 }
+
 
 /* === Funções auxiliares ===*/
 
@@ -277,11 +276,16 @@ function repetirUltimaOperacao() {
    subDisplay.innerHTML = `${pilha[0]} ${auxSinal} ${ultimosValores[1]} = `;
     display.value = pilha[0];
 
-    
+    let array     = [2];
 
+    //criando uma array by dimencional
+    array[0] = `${pilha[0]} ${auxSinal} ${ultimosValores[1]} =`;
+    array[1] = pilha[0];
 
+    historico.push(array);
 
-    addHistorico();
+    carregarHistorico();
+ 
 }
 
 //para limpar os vetores

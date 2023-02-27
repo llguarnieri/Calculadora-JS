@@ -7,7 +7,7 @@ var conteudoBtns = ["%"  ,  "CE" ,   "C"   , "backspace",
                     "+/-",  "0"  ,   ","   , "="];
 
 var funcoesBtns = ["operacoesEspeciais('P')", "limparDados(false)", "limparDados()", "apagarCaracter()",
-                    "operacoesEspeciais('D')", "operacoesEspeciais('E')", "operacoesEspeciais('R')", "calculoAritmetico('*')",
+                    "operacoesEspeciais('D')", "operacoesEspeciais('E')", "operacoesEspeciais('R')", "calculoAritmetico('/')",
                     "addDisplay(7)", "addDisplay(8)", "addDisplay(9)", "calculoAritmetico('*')", 
                     "addDisplay(4)", "addDisplay(5)", "addDisplay(6)", "calculoAritmetico('-')",
                     "addDisplay(1)", "addDisplay(2)", "addDisplay(3)", "calculoAritmetico('+')", 
@@ -72,7 +72,9 @@ function addAtributo(elemento, atributo, valor) {
     elemento.setAttribute(atributo, valor);
 }
 
+
 /**== CONTROLADORES ==*/
+
 
 //controla a abertura de memoria e histórico
 function ativarAuxiliares(parametro = false, caracter = 'H', diminuirTela = false) {
@@ -142,7 +144,7 @@ function ativarHistorico(parametro) {
     }
 }
 
-//controlar o tamanho da tela para mudar o display
+//Controlar o tamanho da tela para mudar o display
 window.addEventListener('resize', function () {
     var largura = window.innerWidth;
 
