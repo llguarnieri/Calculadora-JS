@@ -98,6 +98,7 @@ function calcular() {
 
 /* === Sub operações ===*/
 
+
 //efetua as operações especiais
 function operacoesEspeciais(parametro) {
     let valor = Number(display.value);
@@ -167,14 +168,15 @@ function inverterSinal() {
 function maisOuMenosMemoria(parametro) {
     
     if (memoria.length > 0) {
-        let aux = memoria.length - 1;
+        let aux = memoria.pop();
         if(parametro == '+') {
-            memoria [aux] += Number(display.value);
+            aux += Number(display.value);
         }
         else {
-            memoria [aux] -= Number(display.value);
+            aux -= Number(display.value);
         }
 
+        memoria.push(aux);
         carregarMemoria();
     }
 }

@@ -14,8 +14,8 @@ var funcoesBtns = ["operacoesEspeciais('P')", "limparDados(false)", "limparDados
                     "inverterSinal()", "addDisplay(0)","addPonto()", "calculoAritmetico('=')"]; 
 
 
+//criando os botoes da calculadora
 criarBotoesCalc();
-
 
 //cria os botoes do teclado
 function criarBotoesCalc() {
@@ -28,7 +28,8 @@ function criarBotoesCalc() {
 
 }
 
-function criarLinhasBtns(indiceInicio, indiceFim) { // botao-numeros, "botao-operacoes"
+//criando as linhas com 5 botoes cada
+function criarLinhasBtns(indiceInicio, indiceFim) { 
     let container = document.querySelector(".container-botoes-calc");
     let div = criarTag("div");
     let btn;
@@ -140,7 +141,6 @@ function ativarHistorico(parametro) {
         carregarMemoria();
     }
 }
-
 
 //controlar o tamanho da tela para mudar o display
 window.addEventListener('resize', function () {
