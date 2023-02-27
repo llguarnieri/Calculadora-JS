@@ -164,23 +164,6 @@ function inverterSinal() {
     }
 }
 
-//somar ou diminuir memoria
-function maisOuMenosMemoria(parametro) {
-    
-    if (memoria.length > 0) {
-        let aux = memoria.pop();
-        if(parametro == '+') {
-            aux += Number(display.value);
-        }
-        else {
-            aux -= Number(display.value);
-        }
-
-        memoria.push(aux);
-        carregarMemoria();
-    }
-}
-
 //apaga ultimo caracter
 function apagarCaracter() {
     let valor = display.value.slice(0, -1);
@@ -309,7 +292,7 @@ function limparVetor(vetor) {
 }
 
 
-/* FUNCÇÕES DA MEMORIA  */
+/* == FUNCÇÕES DO HISTÓRICO ==  */
 
 
 //adiciona no historico
@@ -361,7 +344,8 @@ function limparHistorico(){
 }
 
 
-/* FUNCÇÕES DA MEMORIA  */
+/* == FUNÇÕES DA MEMORIA == */
+
 
 //inserir na memoria
 function addMemoria(){
@@ -409,4 +393,21 @@ function pegarMemoria() {
 //joga memorria no display
 function jogarMemoriaDisplay(parametro) {
     display.value = memoria[parseInt(parametro)];
+}
+
+//somar ou diminuir memoria
+function maisOuMenosMemoria(parametro) {
+    
+    if (memoria.length > 0) {
+        let aux = memoria.pop();
+        if(parametro == '+') {
+            aux += Number(display.value);
+        }
+        else {
+            aux -= Number(display.value);
+        }
+
+        memoria.push(aux);
+        carregarMemoria();
+    }
 }
